@@ -79,11 +79,11 @@ const titleStyles = StyleSheet.create({
 @withNavigation
 class ExNavigationBarBackButton extends PureComponent {
   render() {
-    const { tintColor } = this.props;
+    const { tintColor, onPress } = this.props;
 
     return (
       <TouchableOpacity
-        onPress={this._onPress}
+        onPress={onPress || this._onPress}
         hitSlop={BACK_BUTTON_HIT_SLOP}
         style={buttonStyles.buttonContainer}
       >
